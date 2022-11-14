@@ -1,0 +1,7 @@
+<!-- 8) Write a query to find the name (first_name, last_name) of the employees who have a manager and worked in a USA based department. [2.5 marks] -->
+ <!-- employees - EMPLOYEE_ID - FIRST_NAME - LAST_NAME - EMAIL - PHONE_NUMBER - HIRE_DATE - JOB_ID - SALARY - COMMISSION_PCT - MANAGER_ID - DEPARTMENT_ID 
+      departments - DEPARTMENT_ID - DEPARTMENT_NAME - MANAGER_ID - LOCATION_ID 
+      locations - location_id - street_address - postal_code - city - state_province - country_id -->
+
+
+select first_name, last_name from employees Where MANAGER_ID in (select EMPLOYEE_ID from employees where DEPARTMENT_ID IN (select DEPARTMENT_ID from departments where location_id IN (select location_id from locations where country_id='USA')));

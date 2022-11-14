@@ -1,0 +1,6 @@
+<!-- 9) Consider above schemas and Write a query to find the name (first_name, last_name), and salary of the employees who earns more than the average salary and works in any of the IT departments. [2.5 marks]
+
+You need to provide SQL query only -->
+
+
+select first_name, last_name from employees where DEPARTMENT_ID IN (select DEPARTMENT_ID from departments where DEPARTMENT_NAME LIKE 'IT%') AND salary > (select avg(salary) from employees);

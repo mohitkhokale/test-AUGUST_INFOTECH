@@ -1,0 +1,3 @@
+<!-- 11) From the following tables, write a SQL query to find all salespeople and customers located in the city of London. [2. -->
+
+select salesman_id "ID", name, 'Salesman' from Salesman where city='London' UNION (select Customer_id "ID", cust_name, 'Customer' from Customer Where city= 'London')
